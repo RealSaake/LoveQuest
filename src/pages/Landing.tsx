@@ -19,7 +19,7 @@ export const Landing = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-enchanted">
+    <div className="min-h-screen relative overflow-hidden bg-background">
       <FloatingElements />
       
       {/* Hero Background */}
@@ -48,11 +48,11 @@ export const Landing = () => {
 
           {/* Decorative Elements */}
           <div className="flex items-center justify-center gap-6 mb-12 text-2xl opacity-70">
-            <span className="animate-heart-pop transition-transform hover:scale-125" style={{ animationDelay: '0.3s' }}>💕</span>
+            <span className="animate-float transition-transform hover:scale-125" style={{ animationDelay: '0.3s' }}>💕</span>
             <span className="animate-sparkle transition-transform hover:scale-110" style={{ animationDelay: '0.8s' }}>✨</span>
-            <span className="animate-breathe transition-transform hover:scale-125" style={{ animationDelay: '1.3s' }}>🦋</span>
-            <span className="animate-heart-pop transition-transform hover:scale-110" style={{ animationDelay: '1.8s' }}>🌹</span>
-            <span className="animate-breathe transition-transform hover:scale-125" style={{ animationDelay: '2.3s' }}>🌸</span>
+            <span className="animate-float transition-transform hover:scale-125" style={{ animationDelay: '1.3s' }}>🦋</span>
+            <span className="animate-breathe transition-transform hover:scale-110" style={{ animationDelay: '1.8s' }}>🌹</span>
+            <span className="animate-float transition-transform hover:scale-125" style={{ animationDelay: '2.3s' }}>🌸</span>
           </div>
 
           {/* Call to Action */}
