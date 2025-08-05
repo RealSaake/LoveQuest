@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { FloatingElements } from '@/components/FloatingElements';
+import heroImage from '@/assets/hero-romantic.jpg';
 
 export const Landing = () => {
   const navigate = useNavigate();
@@ -17,11 +19,14 @@ export const Landing = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-ivory-paper via-background to-blush-pink/5">
-      {/* Removed FloatingElements - too distracting */}
+    <div className="min-h-screen relative overflow-hidden bg-gradient-enchanted">
+      <FloatingElements />
       
-      {/* Clean minimal background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blush-pink/3 to-dusty-lavender/5" />
+      {/* Hero Background */}
+      <div 
+        className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      />
 
       {/* Decorative Vine */}
       <div className="absolute left-8 top-0 w-1 bg-sage-green opacity-30 transition-all duration-3000 ease-out"
@@ -42,12 +47,12 @@ export const Landing = () => {
           </p>
 
           {/* Decorative Elements */}
-          <div className="flex items-center justify-center gap-8 mb-12 text-3xl opacity-80" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif' }}>
-            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0s' }}>🌸</span>
-            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0.3s' }}>💕</span>
-            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0.6s' }}>🌹</span>
-            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0.9s' }}>💖</span>
-            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '1.2s' }}>✨</span>
+          <div className="flex items-center justify-center gap-4 mb-12 text-2xl opacity-60">
+            <span className="animate-float" style={{ animationDelay: '0.5s' }}>🌿</span>
+            <span className="animate-sparkle" style={{ animationDelay: '1s' }}>✨</span>
+            <span className="animate-float" style={{ animationDelay: '1.5s' }}>🦋</span>
+            <span className="animate-sparkle" style={{ animationDelay: '2s' }}>💐</span>
+            <span className="animate-float" style={{ animationDelay: '2.5s' }}>🌸</span>
           </div>
 
           {/* Call to Action */}
