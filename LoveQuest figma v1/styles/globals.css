@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  
+  /* LoveQuest Color Palette */
+  --ivory-paper: hsl(45, 35%, 96%);
+  --blush-pink: hsl(345, 65%, 86%);
+  --peach-puff: hsl(25, 85%, 88%);
+  --mint-mist: hsl(155, 35%, 85%);
+  --lavender-haze: hsl(285, 45%, 87%);
+  --rose-gold: hsl(15, 50%, 82%);
+  --honey-amber: hsl(40, 60%, 88%);
+  
+  /* Watercolor Gradients */
+  --gradient-romance: linear-gradient(135deg, var(--blush-pink) 0%, var(--rose-gold) 100%);
+  --gradient-garden: linear-gradient(135deg, var(--mint-mist) 0%, var(--lavender-haze) 100%);
+  --gradient-sunset: linear-gradient(135deg, var(--honey-amber) 0%, var(--peach-puff) 100%);
+  --gradient-enchanted: radial-gradient(ellipse at center, var(--mint-mist) 0%, var(--ivory-paper) 100%);
+  
+  /* Shadow System */
+  --heart-glow: 0 0 24px hsl(345, 65%, 86%);
+  --dreamy-shadow: 0 8px 32px hsl(345, 65%, 86%);
+  --float-shadow: 0 12px 48px hsl(285, 45%, 87%);
+  
+  /* Typography */
+  --font-playfair: 'Playfair Display', serif;
+  --font-caveat: 'Caveat', cursive;
+  --font-dancing: 'Dancing Script', cursive;
+  --font-inter: 'Inter', sans-serif;
+  
+  --background: var(--ivory-paper);
+  --foreground: hsl(0, 0%, 20%);
+  --card: #ffffff;
+  --card-foreground: hsl(0, 0%, 20%);
+  --popover: var(--ivory-paper);
+  --popover-foreground: hsl(0, 0%, 20%);
+  --primary: var(--blush-pink);
+  --primary-foreground: hsl(0, 0%, 20%);
+  --secondary: var(--mint-mist);
+  --secondary-foreground: hsl(0, 0%, 20%);
+  --muted: var(--lavender-haze);
+  --muted-foreground: hsl(0, 0%, 40%);
+  --accent: var(--peach-puff);
+  --accent-foreground: hsl(0, 0%, 20%);
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: hsl(345, 30%, 90%);
+  --input: transparent;
+  --input-background: var(--ivory-paper);
+  --switch-background: var(--rose-gold);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--blush-pink);
+  --radius: 1rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom LoveQuest Colors */
+  --color-ivory-paper: var(--ivory-paper);
+  --color-blush-pink: var(--blush-pink);
+  --color-peach-puff: var(--peach-puff);
+  --color-mint-mist: var(--mint-mist);
+  --color-lavender-haze: var(--lavender-haze);
+  --color-rose-gold: var(--rose-gold);
+  --color-honey-amber: var(--honey-amber);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter);
+    background: var(--ivory-paper);
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Paper texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.02) 2px,
+        rgba(0,0,0,0.02) 4px
+      ),
+      radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Typography System */
+@layer base {
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  
+  .font-caveat {
+    font-family: var(--font-caveat);
+  }
+  
+  .font-dancing {
+    font-family: var(--font-dancing);
+  }
+  
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+  
+  /* Hero Headlines */
+  .text-hero {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Handwritten annotations */
+  .text-signature {
+    font-size: clamp(20px, 3vw, 28px);
+    line-height: 1.4;
+  }
+  
+  /* Decorative titles */
+  .text-decorative {
+    font-size: clamp(32px, 4vw, 48px);
+  }
+}
+
+/* Watercolor Gradients */
+@layer utilities {
+  .bg-gradient-romance {
+    background: var(--gradient-romance);
+  }
+  
+  .bg-gradient-garden {
+    background: var(--gradient-garden);
+  }
+  
+  .bg-gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .bg-gradient-enchanted {
+    background: var(--gradient-enchanted);
+  }
+}
+
+/* Animation Classes */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+  
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  
+  .animate-heart-beat {
+    animation: heartBeat 1.5s ease-in-out infinite;
+  }
+  
+  .animate-grow-vine {
+    animation: growVine 3s ease-out forwards;
+  }
+  
+  .animate-breathing {
+    animation: breathing 4s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(-20px) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes growVine {
+  0% { height: 0; opacity: 0; }
+  100% { height: 100%; opacity: 1; }
+}
+
+@keyframes breathing {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Shadow utilities */
+@layer utilities {
+  .shadow-heart-glow {
+    box-shadow: var(--heart-glow);
+  }
+  
+  .shadow-dreamy {
+    box-shadow: var(--dreamy-shadow);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--float-shadow);
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-family: var(--font-playfair);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: var(--font-playfair);
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-family: var(--font-playfair);
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.3;
+    }
+
+    h4 {
+      font-family: var(--font-inter);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-family: var(--font-inter);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-family: var(--font-inter);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-family: var(--font-inter);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-family: var(--font-inter);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
