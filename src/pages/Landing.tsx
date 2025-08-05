@@ -24,9 +24,23 @@ export const Landing = () => {
       
       {/* Hero Background */}
       <div 
-        className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${heroImage})`,
+          filter: 'sepia(20%) saturate(120%) brightness(85%) contrast(110%)',
+          opacity: 0.25
+        }}
       />
+      
+      {/* Subtle texture overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blush-pink/10 via-transparent to-dusty-lavender/10" />
+      <div className="absolute inset-0" style={{
+        backgroundImage: `
+          radial-gradient(circle at 25% 25%, hsl(345, 65%, 86%, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 75% 75%, hsl(285, 45%, 87%, 0.06) 0%, transparent 50%),
+          repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, hsl(155, 35%, 85%, 0.02) 2deg, transparent 4deg)
+        `
+      }} />
 
       {/* Decorative Vine */}
       <div className="absolute left-8 top-0 w-1 bg-sage-green opacity-30 transition-all duration-3000 ease-out"
@@ -47,12 +61,12 @@ export const Landing = () => {
           </p>
 
           {/* Decorative Elements */}
-          <div className="flex items-center justify-center gap-6 mb-12 text-2xl opacity-70">
-            <span className="animate-float transition-transform hover:scale-125" style={{ animationDelay: '0.3s' }}>💕</span>
-            <span className="animate-sparkle transition-transform hover:scale-110" style={{ animationDelay: '0.8s' }}>✨</span>
-            <span className="animate-float transition-transform hover:scale-125" style={{ animationDelay: '1.3s' }}>🦋</span>
-            <span className="animate-breathe transition-transform hover:scale-110" style={{ animationDelay: '1.8s' }}>🌹</span>
-            <span className="animate-float transition-transform hover:scale-125" style={{ animationDelay: '2.3s' }}>🌸</span>
+          <div className="flex items-center justify-center gap-8 mb-12 text-2xl opacity-80">
+            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0s' }}>🥰</span>
+            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0.3s' }}>💕</span>
+            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0.6s' }}>🌹</span>
+            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '0.9s' }}>💍</span>
+            <span className="animate-wave-flow transition-transform hover:scale-125" style={{ animationDelay: '1.2s' }}>✨</span>
           </div>
 
           {/* Call to Action */}
