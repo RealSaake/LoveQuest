@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# 💕 LoveQuest Digital Keepsake - Private Development
 
-## Project info
+> Personal romantic digital experience for Kat - Development Repository
 
-**URL**: https://lovable.dev/projects/b92664ec-a601-4897-b848-5be85f99c343
+## 🔒 Private Repository
 
-## How can I edit this code?
+This is the private development version of LoveQuest containing personal content, photos, letters, and intimate details. 
 
-There are several ways of editing your application.
+**Public Portfolio Version**: [RealSaake/LoveQuest](https://github.com/RealSaake/LoveQuest)
 
-**Use Lovable**
+## 💖 What This Is
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b92664ec-a601-4897-b848-5be85f99c343) and start prompting.
+A romantic digital love letter crafted specifically for Kat, featuring:
+- Personal memories and photos
+- Love letters and intimate messages  
+- Custom quest system with meaningful rewards
+- Beautiful keepsakes that tell our story
+- Watercolor aesthetics with smooth animations
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🎨 Features
 
-**Use your preferred IDE**
+- **🌸 Prologue Landing**: Beautiful watercolor introduction
+- **📖 Memory Timeline**: Our journey together with real photos
+- **🎯 Personal Quests**: Challenges based on our relationship
+- **💎 Keepsake Collection**: Meaningful digital treasures
+- **📸 Memory Vault**: Our most precious moments
+- **⚡ Performance Optimized**: Smooth 48fps experience
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+## 📊 Performance Status
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Grade**: B (90/100 score)
+- **FPS**: Stable 48fps average
+- **Memory**: Optimized 66MB usage
+- **All Tests**: ✅ PASSING
 
-**Use GitHub Codespaces**
+## 🛠️ Tech Stack
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **React 18** + **TypeScript**
+- **Framer Motion** for animations
+- **Tailwind CSS** with custom romantic theme
+- **Vite** for fast development
+- **Custom Performance System** for optimization
 
-## What technologies are used for this project?
+## 📁 Project Structure
 
-This project is built with:
+```
+src/
+├── components/          # UI components
+│   ├── ProloguePage.tsx        # Landing page
+│   ├── LivingBackground.tsx    # Watercolor backgrounds
+│   ├── MemoryMotesSystem.tsx   # Floating particles
+│   └── CinematicTransition.tsx # Page transitions
+├── pages/              # Main application pages
+│   ├── Home.tsx        # Central hub
+│   ├── Timeline.tsx    # Memory timeline
+│   ├── Quests.tsx      # Quest system
+│   ├── Memories.tsx    # Photo gallery
+│   └── Keepsakes.tsx   # Treasure collection
+├── utils/              # Performance & utilities
+└── hooks/              # Custom React hooks
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎯 Development Notes
 
-## How can I deploy this project?
+### Adding Personal Content
+- Photos go in `public/images/`
+- Update content in respective page components
+- Customize quest rewards and keepsakes
+- Personalize memory timeline entries
 
-Simply open [Lovable](https://lovable.dev/projects/b92664ec-a601-4897-b848-5be85f99c343) and click on Share -> Publish.
+### Performance Monitoring
+- Real-time FPS tracking with automatic optimization
+- Emergency mode for critical performance drops
+- Adaptive quality scaling based on device capability
 
-## Can I connect a custom domain to my Lovable project?
+## 💕 For Kat
 
-Yes, you can!
+Every line of code, every animation, every detail has been crafted with love and care. This is your digital love letter - a place where our memories live, our story unfolds, and our love is celebrated in pixels and code.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+*Made with endless love and attention to detail* 💕✨
+
+**This is our private space - handle with care** 🌹

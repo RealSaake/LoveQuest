@@ -8,7 +8,7 @@ interface NavigationProps {
 }
 
 const navItems = [
-  { id: 'home', icon: Home, label: 'Home', path: '/' },
+  { id: 'home', icon: Home, label: 'Home', path: '/home' },
   { id: 'timeline', icon: TreePine, label: 'Timeline', path: '/timeline' },
   { id: 'quests', icon: Target, label: 'Quests', path: '/quests' },
   { id: 'memories', icon: Camera, label: 'Memories', path: '/memories' },
@@ -22,7 +22,7 @@ export default function Navigation({ className = "" }: NavigationProps) {
 
   const getCurrentPage = () => {
     const path = location.pathname;
-    if (path === '/') return 'home';
+    if (path === '/' || path === '/home') return 'home';
     return path.slice(1); // Remove leading slash
   };
 

@@ -3,15 +3,15 @@
  * Inspired by katbday's magical animation choreography
  */
 
-import { Variants } from 'framer-motion';
+import { Variants } from 'motion/react';
 
-// Timing functions from katbday design bible
+// Timing functions from katbday design bible - Motion compatible
 export const easingCurves = {
-  gentle: 'cubic-bezier(0.4, 0, 0.2, 1)',
-  bounce: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-  magical: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-  whimsical: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-  smooth: 'cubic-bezier(0.4, 0, 0.2, 1)'
+  gentle: [0.4, 0, 0.2, 1],
+  bounce: [0.68, -0.55, 0.265, 1.55],
+  magical: [0.175, 0.885, 0.32, 1.275],
+  whimsical: [0.25, 0.46, 0.45, 0.94],
+  smooth: [0.4, 0, 0.2, 1]
 } as const;
 
 export const durations = {
@@ -491,6 +491,92 @@ export const keepsakeAnimations = {
         ease: easingCurves.bounce
       }
     }
+  }
+};
+
+// Cinematic transition animations for the aesthetic revolution
+export const cinematicTransitions = {
+  // Main cinematic transition sequence
+  cinematicTransition: {
+    initial: {
+      scale: 1,
+      rotate: 0,
+      opacity: 1
+    },
+    swirl: {
+      scale: [1, 1.1, 0.9],
+      rotate: [0, 5, -5, 0],
+      opacity: [1, 0.8, 0.6],
+      transition: {
+        duration: 0.5,
+        ease: easingCurves.magical
+      }
+    },
+    nebula: {
+      scale: [0.9, 0.7, 0.5],
+      opacity: [0.6, 0.3, 0.1],
+      transition: {
+        duration: 0.5,
+        ease: easingCurves.magical
+      }
+    },
+    complete: {
+      scale: [0.5, 1.2, 1],
+      opacity: [0.1, 1, 0],
+      transition: {
+        duration: 0.5,
+        ease: easingCurves.gentle
+      }
+    }
+  },
+
+  // Memory Motes flow animation
+  memoryMoteFlow: {
+    initial: {
+      opacity: 0,
+      y: '100vh',
+      scale: 0.5,
+      rotate: 0
+    },
+    animate: {
+      opacity: [0, 0.6, 0.6, 0],
+      y: '-10vh',
+      scale: [0.5, 1, 1, 0.5],
+      rotate: 360,
+      transition: {
+        duration: 12, // Will be randomized per mote
+        ease: easingCurves.gentle,
+        repeat: Infinity,
+        repeatDelay: 2
+      }
+    }
+  },
+
+  // Watercolor breathing animation
+  watercolorBreathing: {
+    animate: {
+      scale: [1, 1.02, 1],
+      opacity: [0.8, 1, 0.8],
+      transition: {
+        duration: 30, // 30-second loop
+        repeat: Infinity,
+        ease: easingCurves.gentle
+      }
+    }
+  },
+
+  // Botanical parallax animation
+  botanicalParallax: {
+    animate: (mouseX: number, mouseY: number) => ({
+      x: mouseX * 0.02,
+      y: mouseY * 0.02,
+      rotate: mouseX * 0.01,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 30
+      }
+    })
   }
 };
 

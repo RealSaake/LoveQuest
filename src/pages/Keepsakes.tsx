@@ -172,16 +172,7 @@ function KeepsakeCard({ keepsake, index, onReveal }: KeepsakeCardProps) {
           rotate: Math.random() > 0.5 ? 1 : -1
         } : { scale: 1.02 }}
         onClick={handleReveal}
-        animate={keepsake.isUnlocked ? {
-          boxShadow: [
-            `0 0 20px ${config.glow}`,
-            `0 0 40px ${config.glow}`,
-            `0 0 20px ${config.glow}`
-          ]
-        } : {}}
-        transition={{
-          boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-        }}
+        // Remove expensive box-shadow animation for performance
       >
         {/* Rarity badge */}
         <motion.div
@@ -235,23 +226,8 @@ function KeepsakeCard({ keepsake, index, onReveal }: KeepsakeCardProps) {
                 🎁
               </motion.div>
               <p className="font-dancing text-xl">Keepsake Unlocked!</p>
-              <div className="mt-2">
-                {[...Array(8)].map((_, i) => (
-                  <motion.span
-                    key={i}
-                    className="inline-block text-yellow-200 text-lg"
-                    initial={{ opacity: 0, y: 20, rotate: 0 }}
-                    animate={{ 
-                      opacity: 1, 
-                      y: -20, 
-                      rotate: 360 * Math.random(),
-                      x: (Math.random() - 0.5) * 40
-                    }}
-                    transition={{ delay: i * 0.1, duration: 1 }}
-                  >
-                    ✨
-                  </motion.span>
-                ))}
+              <div className="mt-2 text-yellow-200 text-lg">
+                ✨ ✨ ✨ ✨ ✨
               </div>
             </motion.div>
           </motion.div>
@@ -259,17 +235,10 @@ function KeepsakeCard({ keepsake, index, onReveal }: KeepsakeCardProps) {
 
         {/* Keepsake content */}
         <div className={keepsake.isUnlocked ? '' : 'blur-sm'}>
-          {/* Icon */}
-          <motion.div
-            className="text-4xl mb-4 text-center"
-            animate={isHovered && keepsake.isUnlocked ? { 
-              scale: [1, 1.2, 1],
-              rotate: [0, 10, -10, 0]
-            } : {}}
-            transition={{ duration: 0.5 }}
-          >
+          {/* Icon - simplified for performance */}
+          <div className="text-4xl mb-4 text-center">
             {keepsake.icon}
-          </motion.div>
+          </div>
 
           {/* Content */}
           <div>
@@ -308,37 +277,15 @@ function KeepsakeCard({ keepsake, index, onReveal }: KeepsakeCardProps) {
           </div>
         </div>
 
-        {/* Sparkle effects for unlocked items */}
+        {/* Simplified sparkle effects for performance */}
         {keepsake.isUnlocked && (
           <>
-            <motion.div
-              className="absolute top-2 left-2 text-yellow-300 text-xs"
-              animate={{ 
-                scale: [0, 1, 0],
-                rotate: [0, 180, 360]
-              }}
-              transition={{ 
-                duration: 3,
-                repeat: Infinity,
-                delay: Math.random() * 2
-              }}
-            >
+            <div className="absolute top-2 left-2 text-yellow-300 text-xs animate-sparkle">
               ✨
-            </motion.div>
-            <motion.div
-              className="absolute bottom-2 right-2 text-yellow-300 text-xs"
-              animate={{ 
-                scale: [0, 1, 0],
-                rotate: [360, 180, 0]
-              }}
-              transition={{ 
-                duration: 3,
-                repeat: Infinity,
-                delay: Math.random() * 2 + 1
-              }}
-            >
+            </div>
+            <div className="absolute bottom-2 right-2 text-yellow-300 text-xs animate-sparkle" style={{ animationDelay: '1s' }}>
               ✨
-            </motion.div>
+            </div>
           </>
         )}
       </motion.div>
