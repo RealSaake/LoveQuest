@@ -49,8 +49,8 @@ export const ProloguePage: React.FC<ProloguePageProps> = ({ onBeginJourney }) =>
             variants={standardAnimations.staggerChild}
             className="font-dancing text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 leading-tight"
           >
-            Welcome to Our LoveQuest,
-            <span className="block text-primary mt-2">Kat</span>
+            Welcome to
+            <span className="block text-primary mt-2">LoveQuest</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -58,7 +58,7 @@ export const ProloguePage: React.FC<ProloguePageProps> = ({ onBeginJourney }) =>
             variants={standardAnimations.staggerChild}
             className="font-caveat text-2xl md:text-3xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            A digital love letter crafted with watercolors, memories, and endless affection 💕
+            A romantic digital experience showcasing modern web development 💕
           </motion.p>
 
           {/* Decorative Elements */}
@@ -96,7 +96,7 @@ export const ProloguePage: React.FC<ProloguePageProps> = ({ onBeginJourney }) =>
               variants={standardAnimations.staggerChild}
               className="font-caveat text-lg text-muted-foreground"
             >
-              Just for you 💕
+              Experience the magic 💕
             </motion.p>
           </motion.div>
 
@@ -106,7 +106,7 @@ export const ProloguePage: React.FC<ProloguePageProps> = ({ onBeginJourney }) =>
             className="mt-16"
           >
             <p className="font-caveat text-xl text-dusty-lavender">
-              Made with love, ink, and a thousand butterflies
+              Built with React, TypeScript, and performance optimization
             </p>
           </motion.div>
         </motion.div>
